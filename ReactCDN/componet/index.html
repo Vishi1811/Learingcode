@@ -11,7 +11,33 @@
 <body>
     <div id="root"></div>
     <script type="text/babel">
-        funtion App()
+        function Name(){
+            return (
+                <div style={ {color: "#ffffff", backgroundColor: "#27ae60", padding: "10px",borderRadius: "8px",marginBottom: "10px"}}>
+                     <h2 >JSX </h2>
+                     <p> This is Javasript XML readering by creating react component without arrow function</p>
+                </div>
+
+            )
+        }
+        const App=()=>
+            (
+                <>
+                    <div style={{ backgroundColor: "#282c34", color: "#61dafb", padding: "10px", borderRadius: "8px" }} >
+                        <h2 >react component </h2>
+                    <p> Creating a react component Using arrow function</p>
+                    </div>
+                  
+
+                   <Name /> called  as component 
+                   {Name()} called as function
+                </>
+            
+            )
+        ReactDOM.createRoot(document.getElementById("root")).render(<App/> )
+        
+        
     </script>
 </body>
 </html>
+                 
