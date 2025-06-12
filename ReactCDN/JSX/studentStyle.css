@@ -1,0 +1,31 @@
+.card{
+    margin: 0;
+    padding: 0;
+
+}
+#table{
+    width: 50%;
+    border-collapse: collapse;
+    font-family: "Segoe UI", sans-serif;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 24px;
+    color: #333333;
+   background-color: #fce4ec;
+        
+}
+#thead{
+     background-color: #ec407a;
+    color: white;
+
+    padding: 12px 16px;
+    text-align: left;
+    font-weight: 600;
+    border-bottom: 2px solid #d0d7e2;
+}
+#table tbody tr:hover {
+  background-color: #f8bbd0; /* Light blue background on hover */
+  cursor: pointer;           /* Changes cursor to pointer */
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
