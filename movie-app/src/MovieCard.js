@@ -6,11 +6,39 @@ class MovieCard extends React.Component{
             titile:"The Avengers",
             plot:"The Avengers is a superhero action film where Earth's mightiest heroes team up to save the world from an alien invasion led by Loki.",
             price:599,
-            rating:9.2
+            rating:9.2,
+            star:0.0,
+            fav:true,
+            cart:true
         }
     }
-    addStar=()=>{
-        console.log("start Added");
+    addStar = () => {
+        this.setState(prevState => {
+            if (prevState.star < 5) {
+            return { star: prevState.star + 0.5 };
+            }
+            return null; // nothing changes
+        });
+    }
+    decstar=()=>{
+        this.setState(prevState=>{
+            if(prevState.star>0)
+                return {star: prevState.star - 0.5};
+            return null;
+        });
+
+    }
+    handlefav=()=>{
+        this.setState({
+            fav:!this.state.fav
+        })
+    }
+    handleCart=()=>{
+        this.setState(
+            {
+                cart:!this.state.cart
+            }
+        )
     }
     render(){
         return (
@@ -31,7 +59,8 @@ class MovieCard extends React.Component{
                                     <img className="str-btn"
                                     alt="Minus"
                                     src="https://cdn-icons-png.flaticon.com/128/1828/1828901.png"
-                                    />
+                                    onClick={this.decstar}
+                                     />
                                     <img className="stars"
                                     alt="star"
                                     src="https://cdn-icons-png.flaticon.com/128/477/477406.png"
@@ -41,10 +70,13 @@ class MovieCard extends React.Component{
                                     src="https://cdn-icons-png.flaticon.com/128/1828/1828817.png" 
                                     onClick={this.addStar}
                                     />
-                                    <span className="starCount">0</span>
+                                    <span className="starCount">{this.state.star.toFixed(1)}</span>
                                     </div>
-                              <button className="favourite-btn">favourite</button>
-                              <button className="cart-btn">Add to cart</button>
+                              <button className={this.state.fav?"favourite-btn":"unfavourite-btn"}
+                              onClick={this.handlefav}>{this.state.fav?"favourite":"unfavourite"}</button>
+                              <button className={this.state.cart?"cart-btn":"remove-crt"}
+                              onClick={this.handleCart}
+                              >{this.state.cart?"Add to cart":"Remove from cart"}</button>
                            </div>
 
                     </div>

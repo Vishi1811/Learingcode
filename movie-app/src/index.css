@@ -122,3 +122,8 @@ footer.starCount {
   text-shadow: none;
   margin: 5px;
 }
+.remove-crt{
+    background-color:#db2828;
+      color: #fff;
+      margin: 5px;
+}
